@@ -15,7 +15,7 @@ def main():
 
   try:
     entrada_de_usuario = int(input("Ingrese un numero valido: "))
-    entrada_trivia = trivia(entrada_de_usuario)
+    entrada_trivia = trivia_fetch(entrada_de_usuario)
     print(f"Acerca de trivia  {entrada_trivia['number']}: {entrada_trivia['text']}")
 
   except ValueError:
