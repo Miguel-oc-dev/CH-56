@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <h1>Conversor de Temperatura</h1>
+    <button id="convertir">Ingresar temperatura en °C</button>
+    <div id="resultados"></div>
+
+    <script>
+        function solicitarTemperatura() {
+        let entrada;
+        let temperatura;
+
+        do {
+            entrada = prompt("Ingrese la temperatura en grados Celsius:");
+            
+            temperatura = parseFloat(entrada);
+
+            if (isNaN(temperatura)) {
+            alert("Error: Debe ingresar un valor numérico. Intente de nuevo.");
+            }
+        } while (isNaN(temperatura));
+
+        const fahrenheit = (temperatura * 9/5) + 32;
+        const kelvin = temperatura + 273.15;
+
+        console.log(`Grados Kelvin: ${kelvin}`);
+        console.log(`Grados Fahrenheit: ${fahrenheit}`);
+
+        document.getElementById("resultados").innerHTML = `
+            <p>Grados Kelvin: ${kelvin}</p>
+            <p>Grados Fahrenheit: ${fahrenheit}</p>
+        `;
+        }
+
+        document.getElementById("convertir").addEventListener("click", solicitarTemperatura);
+    </script>
+</body>
+</html>
